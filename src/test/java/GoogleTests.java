@@ -19,5 +19,14 @@ public class GoogleTests {
     $("html").shouldHave(Condition.text("selenide.org"));
     //Let's define a more precise scope for the assertion:
     $("#rcnt").shouldHave(Condition.text("selenide.org"));
+
+    //Adding yandex variant
+    open("https://yandex.ru");
+
+    // Enter Selenide in search field
+    $("#text").setValue("Selenide").pressEnter();
+
+    //Let's define a more precise scope for the assertion:
+    $("html").shouldHave(Condition.text("selenide.org"));
   }
 }
